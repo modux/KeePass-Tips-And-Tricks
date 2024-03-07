@@ -28,11 +28,31 @@ Here are some of the most useful hotkeys that can be performed from within the K
 
 ### UI Configuration
 
-TODO
+After navigating to 'Tools &rarr; Options...'. The following settings are recommended. Everything else can be the default.
+
+| Setting     | Recommended value |
+| ----------- | -----------       |
+| Security &rarr; General &rarr; Lock workspace when locking the computer or switching the user | Enabled |
+| Security &rarr; General &rarr; Lock workspace when the computer is about to be suspended | Enabled |
+| Security &rarr; General &rarr; Lock workspace when the remote control mode changes | Enabled |
+| Security &rarr; Advanced &rarr; Enter master key on secure desktop | Enabled |
+| Interface (1) &rarr; Main Window &rarr; Close button [X] minimizes main window instead of terminating the application | Enabled |
+| Interface (1) &rarr; Main Window &rarr; Show additional auto-type menu commands | Enabled |
+| Advanced &rarr; Start and Exit &rarr; Automatically save when closing/locking the database | Enabled |
+| Advanced &rarr; Start and Exit &rarr; Automatically save after modifying an entry using the entry dialog | Enabled |
+| KeeAgent &rarr; Unlock all databases when a client sends a request | Enabled |
+| KeeAgent &rarr; Enable agent for Windows OpenSSH | Enabled |
+
 
 ### Database Configuration
 
-TODO
+After navigating to 'File &rarr; Database Settings...'. The following settings are recommended. Everything else can be the default.
+
+| Setting     | Recommended value |
+| ----------- | -----------       |
+| Security &rarr; Key derivation function: | Argon2id |
+| Security &rarr; Iterations | Press the "1 Second Delay" button and the bottom to automatically set iterations to a 1 second delay. When testing, aim for the number iterations to put the key transformation time to between 0.5 - 1 second.  |
+
 
 ### What not to do
 - Store MFA secrets in KeePass
@@ -87,7 +107,36 @@ Do all the Kleopatra stuff from the task tray:
 ## Autotype
 ### Autotype for login
 
-TODO
+Autotype is a way of using KeePass to automate the action of logging into applications and services.
+
+By default all KeePass entries will be configured with the sequence:
+
+```
+{USERNAME}{TAB}{PASSWORD}{ENTER}
+```
+
+This will work for the majority of web login forms. It will enter the username for the entry, press the TAB key, enter the password for the entry, and then press the ENTER key.
+
+Autotype can be triggered either directly from the KeePass application or globally from any application using the following hotkeys:
+
+Global hotkey that can be performed from anywhere in your desktop.
+
+| Hotkey         | Action |
+| -----------    | ----------- |
+| Ctrl + Alt + A | Global: Perform an autotype match from the window title from anywhere  |
+
+From within the Keepass window:
+
+| Hotkey      | Action |
+| ----------- | ----------- |
+| Ctrl + V    | Perform the default autotype for a given entry.  |
+
+
+The default sequence can be changed on a per-entry or group basis:
+
+![alt text](assets/KeePass_XnQtpSaOE6.png)
+
+By using the 'edit' functionality you can create complex sequences for automating logging into almost any application or service.
 
 ### Autotype for text entry
 
@@ -106,12 +155,23 @@ By setting the autotype sequence to `{DELAY 2000}{Notes}` we can delay the input
 The delay is important as it lets you properly select the right window and field before Keepass starts typing.
 
 ## Plugins
-Any plugin you install is third-party code that is getting access to your decrypted Keepass database.
+===BEWARE OF INSTALLING ANY PLUGIN.==
+
+Any plugin you install is third-party code that is getting access to your decrypted KeePass database.
 
 ===BEWARE OF INSTALLING ANY PLUGIN.==
 
-See Modux policy docs for which plugins are authorised.
+See Modux policy docs for which plugins are authorised internally.
 
-### Keeagent
+### KeeAgent
 
-TODO
+KeeAgent is a really useful plugin for people that are using SSH regularly. It enables you to keep your SSH key in an encrypted form whenever your KeePass database is locked (which should be whenever you are away from your computer).
+
+It also lets you put a password on your SSH private key in a way that is fairly invisible to you.
+
+Recommended entry settings for your SSH key entry
+
+| Setting     | Recommended value |
+| ----------- | -----------       |
+| KeeAgent &rarr; Add key to agent when database is opened/unlocked | Enabled |
+| KeeAgent &rarr; Remove key from agent when database is closed/locked | Enabled |
