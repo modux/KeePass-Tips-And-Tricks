@@ -167,11 +167,11 @@ By setting the autotype sequence to `{DELAY 2000}{Notes}` we can delay the input
 The delay is important as it lets you properly select the right window and field before Keepass starts typing.
 
 ## Plugins
-===BEWARE OF INSTALLING ANY PLUGIN.==
+==BEWARE OF INSTALLING ANY PLUGIN.==
 
 Any plugin you install is third-party code that is getting access to your decrypted KeePass database.
 
-===BEWARE OF INSTALLING ANY PLUGIN.==
+==BEWARE OF INSTALLING ANY PLUGIN.==
 
 See Modux policy docs for which plugins are authorised internally.
 
