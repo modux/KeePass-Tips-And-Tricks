@@ -2,6 +2,18 @@
 
 Beyond all of the basics of creating, saving, and managing credentials in Keepass, there are a lot of really useful features that will make using it 10x more powerful.
 
+## Contents
+
+1. [Hotkeys](#hotkeys)
+
+1. [Security and configuration recommendations](#security-and-configuration-recommendations)
+
+1. [Data Exchange](#data-exchange)
+
+1. [Autotype](#autotype)
+
+1. [Plugins](#plugins)
+
 ## Hotkeys
 
 Keepass should be quicker to use than remembering a password and just typing it out. In order to make it quicker to use, hotkeys will be really useful.
